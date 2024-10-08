@@ -1,0 +1,29 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class sayıthm {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        
+        int sayi = random.nextInt(100) + 1; // 1-100 arası rastgele sayı
+        int hak = 3; // Tahmin hakkı
+        
+        System.out.println("1-100 arası bir sayı tahmin edin. 3 hakkınız var.");
+        
+        while (hak > 0) {
+            System.out.print("Tahmininizi girin: ");
+            int tahmin = scanner.nextInt();
+            
+            if (tahmin == sayi) {
+                System.out.println("Tebrikler! Doğru tahmin ettiniz.");
+                return; // Oyun burada biter
+            } else {
+                hak--;
+                System.out.println("Yanlış tahmin. Kalan hakkınız: " + hak);
+            }
+        }
+        
+        System.out.println("Hakkınız bitmiştir! Doğru sayı: " + sayi);
+    }
+}
